@@ -14,7 +14,7 @@ def get_process_mapping():
     """
     try:
         output = subprocess.check_output([
-            'ps', '-ww', '-o', 'pid=', '-o', 'ppid=', '-o', 'args=',
+            'ps', '-A', '-ww', '-o', 'pid=', '-o', 'ppid=', '-o', 'args=',
         ])
     except OSError as e:    # Python 2-compatible FileNotFoundError.
         if e.errno != errno.ENOENT:
